@@ -1,0 +1,101 @@
+{
+    "zip":  "Breakstate.zip",
+    "releases":  [
+                     {
+                         "build":  8,
+                         "version":  "0.1.8+337662c4",
+                         "date":  "2026-11-19",
+                         "commit":  "337662c4",
+                         "sha256":  "E9EEE77EF28F8B4AB6AA1F1FC36446C6F24D8D77B2DD75DDFCEC4E3A2B2BC31D",
+                         "size":  42417112,
+                         "signature":  "B0P6A1nUW9jikEBslOfuO+BIXu0NWIWQ5lv+Nsae27Obitxcs2TrCUoKnUbEP/nwIkrwCVWExcOnDrZUoNfQo+e1hjFuPSX7ySdChOL8ytyuFBkLBfJP+9Gx4XhXs/kIEPsxZFbqWS8fqgJGUnK1b5GQq8UqSN+5uX6ZSM9aeeYmANGQeuB+idqxlIGqM4Ss3pV+PiijAqCIhvAFi7uZCZq9xrGv6fJX78GBxuOrNoM/HuuN2ev280LLRGBTaexSBRbbebRZgCC8Z6sjSqaBVTpV99xwkue1q4WKEUmXNDOM51qy36+Bv5ESxd8b+EMVeM5qFC/pRKkXgvcshwyKaxrW08IvRkfStr5f9AccmZ45UCEgzIkaFr7dOTu/eZ+ATxBybl6ECD/6O1+kqCyhI8tyzyi0SitGO4F8UtQAJLuq71z4qoZ+Cq+tDwSe8XcrxmJCF60MRJmovMmuJYrMxOQTnal/3es9VMmEcIZMfNgsgeFG44LFzsKKtImWEFRi",
+                         "notes":  [
+                                       "Rejoining after a crash now works reliably within about 10 seconds, and you control your body again afterwards.,Joining no longer fails on a rare connection stall: the game retries.,A full match now turns new players away with \u0027That session is full.\u0027,Wood destruction costs the host less time.,Build 8 players only play with Build 8: update to play together."
+                                   ]
+                     },
+                     {
+                         "build":  7,
+                         "version":  "0.1.7+5f3c9c66",
+                         "date":  "2026-11-18",
+                         "commit":  "5f3c9c66",
+                         "sha256":  "D9B4A6A9687E6AB2EDF4CBABA540548CCDC42FA428ADA54DE3ADBEE7D806D13F",
+                         "size":  42382899,
+                         "signature":  "adF5u0Ek9Pk2o11rbz1ZCFUaROMlUsXOrd+QC3wmalInjVn89AJCeqv5+sNog8Cq+5AxWxrKCgEmSuV7bFzSEG7Hs7zBZ6shUGC8trPWyjsSMjxpRPf/39fzXKY6dSy7d3NfkOAuwdRaRoSRpcN90xWMwuQt2bf0vmcIR82Vk7T1YZuVxgKViSBL873Yp27LqZjEBKS77TetDBr7B4Oobq5RnAjQdO4f8FYhEF+5/LHQjQHEmlHlh+06mokQ9V0pVUSxtPSZVWJFTObJKdM115trVfcUoOoo6Q1WQ4F7joSe0dFFgtAoRh6bLbrBymP6js7nY3sQ/8b3FQZNMZbpGtY0ZotNHPIGpxtH9TP8uS04UAyevgrfAubMqUgeiFoy9rzQAxzbUY5jXL670DsaD7lhP5oKhcQUVswoisczIoHXyGiuKkw0yoA17PVgrCcy/bcJ0RBB90qZQT8cHm69P1FR3SZR5f6OYf8hd4iCA4VmM3q2ZAApF0ysCrl1dF4z",
+                         "notes":  [
+                                       "Updates from the website are now signed: the game installs only builds signed by Breakstate, installs them beside the old one and rolls back automatically if the new build fails to start.",
+                                       "Rejoining a match now uses a private per-match code instead of your install key; nobody can take over your character while you are connected.",
+                                       "Builds that only change packaging no longer split players into separate matchmaking."
+                                   ]
+                     },
+                     {
+                         "build":  6,
+                         "version":  "0.1.6+de967d5f",
+                         "date":  "2026-11-18",
+                         "commit":  "de967d5f",
+                         "sha256":  "545DE46C7F0E7DF66DA63F818C71887E98056CD44DA0E371324DAF4B6E18BF42",
+                         "notes":  [
+                                       "Host migration under heavy fire: survivors resume in about 2-4 s instead of waiting up to 15 s or returning to the menu; damaged walls catch up while you play.",
+                                       "A wall that cannot catch up within 15 s is reset to intact for everyone."
+                                   ]
+                     },
+                     {
+                         "build":  5,
+                         "version":  "0.1.5+ee6b83d6",
+                         "date":  "2026-11-18",
+                         "commit":  "ee6b83d6",
+                         "sha256":  "7847B38D2618CB62B43770A709BADB9B69F8D15D345EE32F221465AA4AD6E65B",
+                         "notes":  [
+                                       "Host migration: when the host leaves, the remaining players stay in the match. The world freezes for a moment under a Host migration overlay, then play resumes with the damage, items, bodies and round carried over.",
+                                       "The old host can rejoin and take its body back.",
+                                       "Fixed: clients saw the sandbag stack at the wrong place.",
+                                       "Breakstate Dev Menu.bat in the game folder starts two local copies side by side in the same session."
+                                   ]
+                     },
+                     {
+                         "build":  4,
+                         "version":  "0.1.4+1f79dd10",
+                         "date":  "2026-11-13",
+                         "commit":  "1f79dd10",
+                         "sha256":  "01FB7F0F7BD7EDB0AA0727502D44ADE1B0D9C5FAC9955EA24A051D3DFBFCC467",
+                         "notes":  [
+                                       "When a player leaves, their body stays in the match: it stands still, can be shot, and dies after 30 seconds.",
+                                       "Reconnect within those 30 seconds and you get your own body back.",
+                                       "Rounds pause while a left body is in the match, until someone takes the free place.",
+                                       "A new player never spawns inside a body."
+                                   ]
+                     },
+                     {
+                         "build":  3,
+                         "version":  "0.1.3+cbf69f0",
+                         "date":  "2026-11-12",
+                         "commit":  "cbf69f0",
+                         "sha256":  "A33B5D9CF310669A74CE87BFB3C255DAE12B999692E90251061A417A0FE666CC",
+                         "notes":  [
+                                       "Leaving a match: your player falls where you stood and the camera flies back to the menu.",
+                                       "Click the build number in the menu to see what changed.",
+                                       "No more pop-up after an update."
+                                   ]
+                     },
+                     {
+                         "build":  2,
+                         "version":  "0.1.2+685deec",
+                         "date":  "2026-11-12",
+                         "commit":  "685deec",
+                         "sha256":  "B7614B36460D12B2F2BB69179ADFDF56C9BC7F42C615A45322BFC8841A52FE47",
+                         "notes":  [
+                                       "1V1 now hosts a match when nobody is waiting, so the second player can join it.",
+                                       "The game reads the update list correctly."
+                                   ]
+                     },
+                     {
+                         "build":  1,
+                         "version":  "0.1.1+4dbc61a",
+                         "date":  "2026-11-12",
+                         "commit":  "4dbc61a",
+                         "sha256":  "2119D946CA981F8457E1B242B36C7C4BA49B1B8C07572F2AF1234C14289E8551",
+                         "notes":  [
+                                       "First build that updates itself: new builds are offered in the menu, with what changed."
+                                   ]
+                     }
+                 ]
+}

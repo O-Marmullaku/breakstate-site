@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Breakstate · Unfamiliar</title>
+<!--
+  The shared download page for both games (breakstate.to). It is static: each game's publish script only replaces its
+  own files (Breakstate: Breakstate.zip + releases.json at the root; Unfamiliar: unfamiliar/), and this page reads the
+  current build, date and size from them in the browser. Source of truth: C:\Unfamiliar\Tools\release\site\index.html.
+-->
+<style>
+  /* Spacing follows an 8 px scale (.5rem steps): 8 px inside a group (button + size, instruction + legal note), 32 px between groups. */
+  :root { --bg: #0e0f11; --fg: #e8e8e6; --dim: #8a8c90; --line: #2a2c30; --breakstate: #d23c2a;
+          --uf-fg: #d8d4cc; --uf-dim: #8f8a80; --uf-accent: #c8a46a;
+          --ease: cubic-bezier(.2, .7, .2, 1); }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--fg);
+               font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .games { display: grid; grid-template-columns: 1fr 1px 1fr; min-height: 100vh; }
+  .divider { background: linear-gradient(to bottom, transparent, var(--line) 15%, var(--line) 85%, transparent); z-index: 1; }
+
+  /* Each half: an in-game screenshot behind a centred block (title, build, download, notes). */
+  .game { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center;
+          text-align: center; padding: 48px 6vw 72px; }
+  .backdrop { position: absolute; inset: -24px; background: var(--bg) center / cover no-repeat;
+              --rest: blur(5px) brightness(.5) saturate(.9); --near: blur(1px) brightness(.68) saturate(1.05); --far: blur(6px) brightness(.4) saturate(.82);
+              filter: var(--rest); transform: scale(1.04); transition: transform .5s var(--ease), filter .5s var(--ease); }
+  .backdrop.missing { background-image: linear-gradient(135deg, #17181b, #0e0f11) !important; filter: none !important; }
+  .content { position: relative; z-index: 2; width: 100%; max-width: 34rem; transition: transform .5s var(--ease), opacity .5s var(--ease); }
+  /* Readability: a soft dark pool behind the centred text, so the backdrop itself can stay clear. */
+  .game::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+                 background: radial-gradient(ellipse 60% 45% at 50% 50%, rgba(14, 15, 17, .55), rgba(14, 15, 17, 0) 100%); }
+
+  /* Hovering (or keyboard-focusing) a half brings that game forward and pushes the other back, so the page reads as
+     two distinct games: the active half's picture pops (grows, sharpens, brightens) and its text lifts 4 px (never scaled: scaled text
+     renders soft and moves the button under the pointer); the other half
+     dims a little and its text fades, all over 500 ms. Always animated: the page ignores the OS reduced-motion setting
+     (owner rule). Touch screens (no hover) stay still; keyboard focus works like hover and wins over it. */
+  .game::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: rgba(6, 7, 8, .3);
+                  opacity: 0; transition: opacity .5s var(--ease); }
+  /* One active half at a time (the script below sets it): keyboard focus wins over mouse hover. */
+  .games.has-active .game.is-active .backdrop { filter: var(--near); transform: scale(1.1); }
+  .games.has-active .game.is-active .content { transform: translateY(-4px); }
+  .games.has-active .game:not(.is-active)::before { opacity: 1; }
+  .games.has-active .game:not(.is-active) .content { opacity: .7; }
+  .games.has-active .game:not(.is-active) .backdrop { filter: var(--far); }
+
+  h1 { font-size: 2.5rem; letter-spacing: .08em; margin: 0 0 .25rem; text-transform: uppercase; padding-left: .08em; }
+  .version { color: var(--dim); font-family: ui-monospace, Consolas, monospace; font-size: .9rem; margin: 0 0 2rem; min-height: 1.4em; }
+  .actions { display: flex; flex-direction: column; align-items: center; gap: .5rem; margin: 0; }
+  a.download { display: inline-block; color: #fff; text-decoration: none; font-weight: 600; padding: .9rem 1.6rem; border-radius: 4px;
+               transition: filter .2s, background-color .2s, transform .2s var(--ease); }
+  a.download:hover { filter: brightness(1.1); transform: translateY(-1px); }
+  /* Keyboard focus is always visible, in each game's own colour. */
+  a.download:focus-visible { outline: 2px solid var(--fg); outline-offset: 4px; }
+  #unfamiliar a.download:focus-visible { outline-color: var(--uf-accent); }
+  #breakstate a.download { background: var(--breakstate); }
+  a.download.unavailable { background: #2a2c30 !important; color: var(--dim) !important; pointer-events: none; }
+  .size { color: var(--dim); font-size: .85rem; min-height: 1.3em; }
+  .how { margin: 2rem 0 0; }
+  /* The legal note is secondary: smaller, dimmer, wrapped into balanced lines instead of a forced break. */
+  .legal { margin: .5rem auto 0; max-width: 22rem; font-size: .8rem; line-height: 1.45; color: var(--dim); text-wrap: balance; }
+  .how b { font-weight: 600; }
+
+  /* Unfamiliar's theme: same layout, quieter: thin wide-tracked title, warm sodium-lamp accent, square edges.
+     A night scene is already dark, so its picture is blurred and dimmed far less. */
+  #unfamiliar { color: var(--uf-fg); }
+  #unfamiliar .backdrop { --rest: blur(1.5px) brightness(.8) saturate(.95); --near: blur(0) brightness(1.1) saturate(1.05); --far: blur(2px) brightness(.65) saturate(.88); }
+  #unfamiliar h1 { font-weight: 300; letter-spacing: .32em; padding-left: .32em; }
+  #unfamiliar .version, #unfamiliar .size, #unfamiliar .legal { color: var(--uf-dim); }
+  #unfamiliar a.download { background: transparent; color: var(--uf-accent); border: 1px solid var(--uf-accent); border-radius: 0;
+                           font-weight: 500; letter-spacing: .06em; }
+  #unfamiliar a.download:hover { background: rgba(200, 164, 106, .14); filter: none; }
+
+  footer { position: fixed; left: 0; right: 0; bottom: 0; padding: 12px 16px; text-align: center; color: var(--dim); z-index: 2;
+           font-size: .75rem; letter-spacing: .04em; background: linear-gradient(to top, var(--bg) 60%, transparent); }
+  @media (max-width: 820px) {
+    .games { grid-template-columns: 1fr; }
+    .divider { height: 1px; margin: 0 16px; background: var(--line); }
+    .game { padding: 40px 16px; min-height: 60vh; }
+    .game:last-of-type { padding-bottom: 80px; }
+    h1 { font-size: 2rem; }
+    #unfamiliar h1 { letter-spacing: .22em; padding-left: .22em; }
+  }
+</style>
+</head>
+<body>
+<main class="games">
+  <section class="game" id="breakstate" data-releases="releases.json" data-exe="Breakstate.exe">
+    <div class="backdrop" style="background-image: url('art/breakstate.jpg')" aria-hidden="true"></div>
+    <div class="content">
+      <h1>Breakstate</h1>
+      <p class="version">&nbsp;</p>
+      <p class="actions"><a class="download" href="Breakstate.zip" download>Download for Windows</a><span class="size"></span></p>
+      <p class="how">Unzip and run <b>Breakstate.exe</b>.</p>
+      <p class="legal">Unauthorized distribution will be prosecuted and met with legal actions.</p>
+    </div>
+  </section>
+  <div class="divider" aria-hidden="true"></div>
+  <section class="game" id="unfamiliar" data-releases="unfamiliar/releases.json" data-exe="Unfamiliar.exe">
+    <div class="backdrop" style="background-image: url('art/unfamiliar.jpg')" aria-hidden="true"></div>
+    <div class="content">
+      <h1>Unfamiliar</h1>
+      <p class="version">&nbsp;</p>
+      <p class="actions"><a class="download" href="unfamiliar/Unfamiliar.zip" download>Download for Windows</a><span class="size"></span></p>
+      <p class="how">Unzip and run <b>Unfamiliar.exe</b>.</p>
+      <p class="legal">Unauthorized distribution will be prosecuted and met with legal actions.</p>
+    </div>
+  </section>
+</main>
+<footer>© <span id="year"></span> Crazy Entertainment</footer>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  // The active half: the one holding keyboard focus, else the one under a mouse (touch never hovers).
+  (function () {
+    var games = document.querySelector(".games"), halves = games.querySelectorAll(".game"), focused = null, hovered = null;
+    function show() {
+      var active = focused || hovered;
+      games.classList.toggle("has-active", !!active);
+      halves.forEach(function (half) { half.classList.toggle("is-active", half === active); });
+    }
+    halves.forEach(function (half) {
+      half.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") { hovered = half; show(); } });
+      half.addEventListener("pointerleave", function () { if (hovered === half) { hovered = null; show(); } });
+      half.addEventListener("focusin", function (e) { if (e.target.matches(":focus-visible")) { focused = half; show(); } });
+      half.addEventListener("focusout", function () { if (focused === half) { focused = null; show(); } });
+    });
+  })();
+  // In-game screenshots (art/<game>.jpg); a missing one leaves a dark gradient instead of a broken image.
+  document.querySelectorAll(".backdrop").forEach(function (art) {
+    var url = art.style.backgroundImage.replace(/^url\(["']?|["']?\)$/g, "");
+    var probe = new Image();
+    probe.onerror = function () { art.classList.add("missing"); art.style.backgroundImage = ""; };
+    probe.src = url;
+  });
+  // Each game's latest build, date and zip size come from its own release history, so this page never needs rewriting.
+  document.querySelectorAll(".game").forEach(function (game) {
+    var version = game.querySelector(".version"), link = game.querySelector("a.download"), size = game.querySelector(".size");
+    var bust = "?t=" + Date.now();
+    fetch(game.dataset.releases + bust, { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (history) {
+        var latest = (history.releases || []).slice().sort(function (a, b) { return b.build - a.build; })[0];
+        if (!latest) throw new Error("empty");
+        // The build number in the link defeats a cached older zip (the site caches for ten minutes).
+        link.setAttribute("href", link.getAttribute("href") + "?b=" + latest.build);
+        version.textContent = "Playtest Build " + latest.build + " · " + latest.date;
+        return fetch(link.getAttribute("href"), { method: "HEAD", cache: "no-store" });
+      })
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        var bytes = Number(r.headers.get("Content-Length"));
+        if (bytes > 0) size.textContent = "ZIP · " + Math.round(bytes / 1048576).toLocaleString("en") + " MB";
+      })
+      .catch(function () {
+        version.textContent = "Coming soon";
+        link.classList.add("unavailable");
+        link.removeAttribute("href");
+        link.textContent = "Not yet available";
+      });
+  });
+</script>
+</body>
+</html>
