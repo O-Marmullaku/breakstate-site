@@ -2,6 +2,20 @@
     "zip":  "Unfamiliar.zip",
     "releases":  [
                      {
+                         "build":  30,
+                         "version":  "0.1.30+e5b92d8",
+                         "date":  "2026-11-26",
+                         "commit":  "e5b92d8",
+                         "sha256":  "569FDDCE9251F0A3219DD306FA0A5D8634603486197E01A15D6AC950EEF7DCC4",
+                         "public":  false,
+                         "notes":  [
+                                       "Playtest from the verified build with stable world-space puddle reflections.",
+                                       "Improve Main Menu framing, highlighted text, and the compact save confirmation.",
+                                       "Fade through black for camera cuts and use the wisp for live handoffs.",
+                                       "Sweep both opening controls away together in one wind pass."
+                                   ]
+                     },
+                     {
                          "build":  29,
                          "version":  "0.1.29+1bdea76",
                          "date":  "2026-11-26",
