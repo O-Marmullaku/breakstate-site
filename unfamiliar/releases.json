@@ -2,6 +2,19 @@
     "zip":  "Unfamiliar.zip",
     "releases":  [
                      {
+                         "build":  29,
+                         "version":  "0.1.29+1bdea76",
+                         "date":  "2026-11-26",
+                         "commit":  "1bdea76",
+                         "sha256":  "54533BA4DEE4E6C46716049B600F2BDFC2F0B0E2431612248153D955BDB45EB7",
+                         "public":  false,
+                         "notes":  [
+                                       "Stabilize puddle reflections while the camera moves.",
+                                       "Reframe the main menu on every return and restore the exact view on Resume Game.",
+                                       "Ease the fusebox latch and make door dragging follow the grip from either side."
+                                   ]
+                     },
+                     {
                          "build":  28,
                          "version":  "0.1.28+9d110a3",
                          "date":  "2026-11-26",
