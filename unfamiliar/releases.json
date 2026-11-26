@@ -1,0 +1,336 @@
+{
+    "zip":  "Unfamiliar.zip",
+    "releases":  [
+                     {
+                         "build":  28,
+                         "version":  "0.1.28+9d110a3",
+                         "date":  "2026-11-26",
+                         "commit":  "9d110a3",
+                         "sha256":  "1245B636DE07782ED798CCC24A6B790F4E37DA5826D96828A37FF090615583ED",
+                         "public":  false,
+                         "notes":  [
+                                       "A streetlamp pole now hides only the parts of the eyes it covers."
+                                   ]
+                     },
+                     {
+                         "build":  27,
+                         "version":  "0.1.27+24e44a1",
+                         "date":  "2026-11-25",
+                         "commit":  "24e44a1",
+                         "sha256":  "15045235F6BCBB87A0F0C3998503F871CE23DCC40AF4C46432917765FDD25B41",
+                         "public":  false,
+                         "notes":  [
+                                       "Refactor"
+                                   ]
+                     },
+                     {
+                         "build":  26,
+                         "version":  "0.1.26+69bb35e",
+                         "date":  "2026-11-22",
+                         "commit":  "69bb35e",
+                         "sha256":  "FD18DFEE0B8FD5A87EA38002540C2DC49529AFC4122816056F611B5FC4ECD53C",
+                         "public":  false,
+                         "notes":  [
+                                       "The fog now turns you back along a curved line by the Main House.",
+                                       "The low mist thickens gradually as you walk in."
+                                   ]
+                     },
+                     {
+                         "build":  25,
+                         "version":  "0.1.25+67fb9f5",
+                         "date":  "2026-11-22",
+                         "commit":  "67fb9f5",
+                         "sha256":  "7B3F4717A216B9D7F403219C87AD971E48D5EAB9F580AFE6270B9A62A1C847ED",
+                         "public":  false,
+                         "notes":  [
+                                       "The Bohlackerweg fog sits lower so you can see over it from the Main House catwalk.",
+                                       "The fog turns you around at the end of the house."
+                                   ]
+                     },
+                     {
+                         "build":  24,
+                         "version":  "0.1.24+f7ffaeb",
+                         "date":  "2026-11-22",
+                         "commit":  "f7ffaeb",
+                         "sha256":  "A14953BB997214725C6A420DE2500CF5EACB7AADC8065D4A71D89BC698831292",
+                         "public":  false,
+                         "notes":  [
+                                       "Bohlackerweg fog now leads you back through the entrance.",
+                                       "Added F1 fog presets and polished the Main House entrance."
+                                   ]
+                     },
+                     {
+                         "build":  23,
+                         "version":  "0.1.23+52be875",
+                         "date":  "2026-11-21",
+                         "commit":  "52be875",
+                         "sha256":  "793E76E8ACD34339DDC1339ECDF06FEA865F4F4EC7D5E74916424DB08320D5C7",
+                         "public":  false,
+                         "notes":  [
+                                       "Added a 60-second lock to the Main House entrance.",
+                                       "A small center dot helps you find and use nearby interactive objects."
+                                   ]
+                     },
+                     {
+                         "build":  22,
+                         "version":  "0.1.22+effd943",
+                         "date":  "2026-11-21",
+                         "commit":  "effd943",
+                         "sha256":  "66F0F7B15D73DFF2D2AE5B0FDED4F36719FE26E27B8EB90A92AA105272560CE7",
+                         "public":  false,
+                         "notes":  [
+                                       "Added monster."
+                                   ]
+                     },
+                     {
+                         "build":  21,
+                         "version":  "0.1.21+3ca459e",
+                         "date":  "2026-11-21",
+                         "commit":  "3ca459e",
+                         "sha256":  "6A4B8DBFD80B849EAE469C8FDA70BD73CE7BE44DF77FDAA5B41944A0A8A2D280",
+                         "public":  false,
+                         "notes":  [
+                                       "Updated road widths, slopes and sidewalks using the real street as a reference.",
+                                       "Refined the Sattlerei storefront, barbershop corner and Main House entry with a recessed parking apron."
+                                   ]
+                     },
+                     {
+                         "build":  20,
+                         "version":  "0.1.20+eb7fb2f",
+                         "date":  "2026-11-19",
+                         "commit":  "eb7fb2f",
+                         "sha256":  "D304C94E06FEE0F6CF33B7A176700B6BD21EE9AA0BC6F57A90F5A4DB0E338E7F",
+                         "public":  false,
+                         "notes":  [
+                                       "The wet road has glossier and duller stretches instead of one even sheen.",
+                                       "More puddles out in the lanes, filling after the gutters.",
+                                       "No more perfectly oval puddles."
+                                   ]
+                     },
+                     {
+                         "build":  19,
+                         "version":  "0.1.19+ac99407",
+                         "date":  "2026-11-19",
+                         "commit":  "ac99407",
+                         "sha256":  "685541A8ADBA11CBFC6B4121F65E16047603D973044F37FB64B80C39A967FCA2",
+                         "public":  false,
+                         "notes":  [
+                                       "Lamps reflect as a broad glow on the wet road and as a sharp image in deep puddles.",
+                                       "The dev launcher closes the running game itself before updating."
+                                   ]
+                     },
+                     {
+                         "build":  18,
+                         "version":  "0.1.18+544628e",
+                         "date":  "2026-11-19",
+                         "commit":  "544628e",
+                         "sha256":  "DB6564CD7CF970202CC6B1A8E201A1D81099346B02BCDD967C6B47D5B61FEA9A",
+                         "public":  false,
+                         "notes":  [
+                                       "Puddle edges are a few centimetres of gravel instead of a wide field of dots.",
+                                       "Shallow water still shows the asphalt; deeper water turns into a mirror.",
+                                       "Rain blurs reflections a little."
+                                   ]
+                     },
+                     {
+                         "build":  17,
+                         "version":  "0.1.17+289c7fc",
+                         "date":  "2026-11-19",
+                         "commit":  "289c7fc",
+                         "sha256":  "B8ABB3603D1200ABC452DE17C988F0CCC424CD3BE16FCE57C1345C6240631090",
+                         "public":  false,
+                         "notes":  [
+                                       "Water rises gradually: gutters first, then it creeps across the road over the camber.",
+                                       "Big shallow puddles out on the road in heavy weather."
+                                   ]
+                     },
+                     {
+                         "build":  16,
+                         "version":  "0.1.16+8454785",
+                         "date":  "2026-11-19",
+                         "commit":  "8454785",
+                         "sha256":  "68EDA55D57236421E5CACB3C96C545A3E051F3DC1F2A0E4DCE3A333B5A83A403",
+                         "public":  false,
+                         "notes":  [
+                                       "Weather: dry, damp, wet, soaked and rain, blending smoothly.",
+                                       "Puddles fill from the gutters up and follow the asphalt grain.",
+                                       "F1 opens the developer panel (weather presets and sliders)."
+                                   ]
+                     },
+                     {
+                         "build":  15,
+                         "version":  "0.1.15+edd3597",
+                         "date":  "2026-11-19",
+                         "commit":  "edd3597",
+                         "sha256":  "394EB14804B26E043954F0A1814AF8430EBC1B6E6FD560F0F7A3FE2CC37DBF89",
+                         "notes":  [
+                                       "Many more puddles along the kerbs, where the road drains; only a few out in the lanes.",
+                                       "Gutter puddles are long and fill the gutter instead of small specks."
+                                   ]
+                     },
+                     {
+                         "build":  14,
+                         "version":  "0.1.14+4043d58",
+                         "date":  "2026-11-18",
+                         "commit":  "4043d58",
+                         "sha256":  "078ACAFFEDFF91164FC8B63894F61AE7C7F75A3BA1E9206E32AF2F51B5565E23",
+                         "notes":  [
+                                       "The road is damp instead of mirror-wet: lamps leave a soft, steady sheen that no longer shimmers as you move.",
+                                       "Only puddles still reflect sharply."
+                                   ]
+                     },
+                     {
+                         "build":  13,
+                         "version":  "0.1.13+0b2b896",
+                         "date":  "2026-11-18",
+                         "commit":  "0b2b896",
+                         "sha256":  "84BD786EEB552A2EA30C5F67E80964584B22F821D71EFAEED00B1C4221519138",
+                         "notes":  [
+                                       "The whole road is wet asphalt that reflects the lamps in long streaks, without the grainy sparkle.",
+                                       "Puddles are separate, flat, mirror-like patches where water collects: along the kerbs and a few in the wheel tracks.",
+                                       "No more blotchy spots or ripple pattern across the lanes."
+                                   ]
+                     },
+                     {
+                         "build":  12,
+                         "version":  "0.1.12+9e6a400",
+                         "date":  "2026-11-18",
+                         "commit":  "9e6a400",
+                         "sha256":  "7E5D13EA3C72DEACB1BE9FC16DDA6DAA49F4359677DBB3608184BF73939ABC50",
+                         "notes":  [
+                                       "Raised pavements with granite kerbs and a flush setts gutter, like Swiss streets.",
+                                       "The road is cambered: it rises towards the middle and water drains to the kerbs.",
+                                       "The road is wet all over and reflects distant lamps again.",
+                                       "Puddles are smaller street puddles, mostly along the kerbs."
+                                   ]
+                     },
+                     {
+                         "build":  11,
+                         "version":  "0.1.11+740bb1e",
+                         "date":  "2026-11-18",
+                         "commit":  "740bb1e",
+                         "sha256":  "B485FC542DBE4AD01155FDC6E47C14466681E5776194396D1398344EA28B1D06",
+                         "notes":  [
+                                       "Puddles have natural shapes now: no straight edges or stair-steps.",
+                                       "Puddle ripples no longer show a repeating pattern."
+                                   ]
+                     },
+                     {
+                         "build":  10,
+                         "version":  "0.1.10+7fb08b5",
+                         "date":  "2026-11-18",
+                         "commit":  "7fb08b5",
+                         "sha256":  "361EC445767962EDE83AB418EEF0EE82A753FDC9BBB71E3D34B0BDE1CC65A5D9",
+                         "notes":  [
+                                       "Puddles are placed naturally now: no more rows of puddles in a straight line.",
+                                       "Distant lamp reflections stay strong while you walk."
+                                   ]
+                     },
+                     {
+                         "build":  9,
+                         "version":  "0.1.9+855d009",
+                         "date":  "2026-11-18",
+                         "commit":  "855d009",
+                         "sha256":  "CF142598663D68053CBACEE89779A4151B6E0A1E42A2864B9BBB6E8EAA30589D",
+                         "notes":  [
+                                       "Puddles have gentle wind ripples now: they move, and lamp light breaks into glints and streaks in them."
+                                   ]
+                     },
+                     {
+                         "build":  8,
+                         "version":  "0.1.8+d8602a5",
+                         "date":  "2026-11-18",
+                         "commit":  "d8602a5",
+                         "sha256":  "DA527A53910FC67F5E924742E81764DFCE271D583993B79103487BE15C9B5465",
+                         "notes":  [
+                                       "No more grain in the reflections; the whole street has a wet sheen again.",
+                                       "Footsteps always play, also with Head Bob off, and never double when you change pace.",
+                                       "Movement is the same at any frame rate and pausing freezes it fully.",
+                                       "UnfamiliarDev.exe: safer updates (a failed update puts the old build back) and you can play offline."
+                                   ]
+                     },
+                     {
+                         "build":  7,
+                         "version":  "0.1.7+d269647",
+                         "date":  "2026-11-18",
+                         "commit":  "d269647",
+                         "sha256":  "CDE4A8FF5623748845E188C1BDD2AA8E4DEA675442B3DEC310655A668E71A419",
+                         "notes":  [
+                                       "Sharp lamp reflections in puddles are back, steadier than before.",
+                                       "The street looks wet again."
+                                   ]
+                     },
+                     {
+                         "build":  6,
+                         "version":  "0.1.6+a4ab2d3",
+                         "date":  "2026-11-18",
+                         "commit":  "a4ab2d3",
+                         "sha256":  "3A1E9334764D398F955AF5A5C13B87255E915262705B731D54BF124E77CA807E",
+                         "notes":  [
+                                       "Puddle reflections are steady from every angle (no more missing or glitchy reflections).",
+                                       "New: UnfamiliarDev.exe beside the game checks for updates before the game starts.",
+                                       "The update file moved into Unfamiliar_Data."
+                                   ]
+                     },
+                     {
+                         "build":  5,
+                         "version":  "0.1.5+b3d2c4d",
+                         "date":  "2026-11-18",
+                         "commit":  "b3d2c4d",
+                         "sha256":  "C45EC6CF795D9C00B66BC382BDBDD6B52CEAEEB5A94BD7CCE2A106EFA1454E93",
+                         "notes":  [
+                                       "Puddles are flat mirrors now: clean lamp reflections, no smeared wobble.",
+                                       "Puddles are separate patches again instead of long sheets.",
+                                       "Dry asphalt is calmer up close (no glowing bubble pattern)."
+                                   ]
+                     },
+                     {
+                         "build":  4,
+                         "version":  "0.1.4+a2d43ba",
+                         "date":  "2026-11-18",
+                         "commit":  "a2d43ba",
+                         "sha256":  "5002657CD1312C1069DE7714DB0FA5991843ECE96ECE863BB266EEED5C06B5D5",
+                         "notes":  [
+                                       "Fixed pixel speckles in puddles and the sparkly puddle edges.",
+                                       "Menu items no longer turn pale when pressed.",
+                                       "Walking is a bit faster with longer strides; head bob now lands with each step.",
+                                       "New setting: Head Bob on/off (Settings \u003e Gameplay)."
+                                   ]
+                     },
+                     {
+                         "build":  3,
+                         "version":  "0.1.3+10ab492",
+                         "date":  "2026-11-18",
+                         "commit":  "10ab492",
+                         "sha256":  "118A1D109BB44FAA0AEBF38431553E7E55343D8F45B29D0BDA7399CB40755B3A",
+                         "notes":  [
+                                       "Better footstep sounds.",
+                                       "More natural walking and jogging speed.",
+                                       "Better puddles.",
+                                       "Removed the Unity splash screen."
+                                   ]
+                     },
+                     {
+                         "build":  2,
+                         "version":  "0.1.2+6795203",
+                         "date":  "2026-11-17",
+                         "commit":  "6795203",
+                         "sha256":  "BE144DC349F8A0AD9865B44BD4CEBE40BF611A775391F9B8ECB66BF90BFDB342",
+                         "notes":  [
+                                       "Download page refresh.",
+                                       "Update test build: no gameplay changes."
+                                   ]
+                     },
+                     {
+                         "build":  1,
+                         "version":  "0.1.1+2da51f9",
+                         "date":  "2026-11-17",
+                         "commit":  "2da51f9",
+                         "sha256":  "C9EFB84F7D7DC1028EE71A81F2316D200DBD0664348B4416A1C05F3C2195CFA1",
+                         "notes":  [
+                                       "First playtest: walk the foggy night street on Luzernerstrasse.",
+                                       "Title menu, pause and settings."
+                                   ]
+                     }
+                 ]
+}
